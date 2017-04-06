@@ -1,0 +1,19 @@
+apply plugin: 'java'
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.4'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+test {
+    maxParallelForks=3
+    useJUnit {
+    }
+}
